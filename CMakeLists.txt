@@ -50,11 +50,11 @@ target_link_libraries(${TARGET_NAME} PRIVATE
 ADD_DEFINITIONS(-DUSE_RGB_LED)
 
 # Use extra keys
-ADD_DEFINITIONS(-DUSE_EXTRA_KEYS_EPOMAKER_TH21)
+# ADD_DEFINITIONS(-DUSE_EXTRA_KEYS_EPOMAKER_TH21)
 
 # Upload firmware as part of the build process
-ADD_DEFINITIONS(-DUSE_CDC_DEVICE)
-add_custom_target(upload_firmware ALL
-    COMMAND ${CMAKE_SOURCE_DIR}/tools/macropad-dfu.sh ${CMAKE_CURRENT_BINARY_DIR}/${TARGET_NAME}.uf2
-    DEPENDS ${TARGET_NAME}
-    COMMENT "Upload firmware")
+# ADD_DEFINITIONS(-DUSE_CDC_DEVICE)
+# add_custom_target(upload_firmware ALL
+#     COMMAND ${CMAKE_SOURCE_DIR}/tools/macropad-dfu.sh ${CMAKE_CURRENT_BINARY_DIR}/${TARGET_NAME}.uf2
+#     DEPENDS ${TARGET_NAME}
+#     COMMENT "Upload firmware")

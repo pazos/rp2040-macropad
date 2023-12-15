@@ -1,4 +1,5 @@
-#include "empty.h"
+#include "desktop.h"
+#include "media.h"
 
 enum Keys {
   KEY_NONE = 0,
@@ -43,9 +44,12 @@ private:
   int current_layer = 0;
   bool numeric_mode = true;
 
-  Empty empty;
+  Desktop desktop;
+  Media media;
 
-  Layer* const layers[1] = {
+  Layer* const layers[2] = {
+    &desktop,
+    &media
   };
 
   uint8_t layer_count = ((sizeof(layers) / sizeof(layers[0])) - 1);
